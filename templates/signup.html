@@ -1,0 +1,48 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link href="{% static 'styles/blood.css'%}" rel="stylesheet">
+
+    </head>
+    <body>    
+
+        <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+            {{message}}
+            
+            {% endfor%}
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form  class="box" action='/signuup/' method="POST">
+                            {% csrf_token %}
+    
+                            <h1>Login</h1>
+                            <p class="text-muted"> Please Enter Your Details here</p>
+                            <input type="text" name="uname" id="usname" placeholder="Username"> 
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name"> 
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name"> 
+                            <input type="text" name="eail" id="eail" placeholder="Email"> 
+
+
+                            <input type="password" name="pass1" id="pass1" placeholder="Password"> 
+
+                            <input type="password" name="pass2" id="pass2" placeholder="Enter Your Password Again">        
+                            <input type="submit">
+    
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+</body>
+</html>

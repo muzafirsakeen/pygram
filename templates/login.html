@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link href="{% static 'styles/blood.css' %}" rel="stylesheet">
+        
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+            {{message}}
+            
+            {% endfor%}
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form  class="box" action='/display/' method="POST">
+                        {% csrf_token %}
+
+                        <h1>Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p> 
+                        <input type="text" name="usern" id="usern" placeholder="Username"> 
+                        <input type="password" 
+                        name="password" id="password" placeholder="Password"> <a class="forgot text-muted" href="/signuup/">Dont Have Account..Signup</a>          
+                           <input type="submit">
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
