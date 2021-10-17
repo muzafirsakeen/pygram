@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<style>
+#screen {
+width: 50vw;
+height: 50vh;
+margin: 0px;
+padding: 0px;
+float: left;
+}
+</style>
+</head>
+
+<body>
+<div class="tile" id="screen">
+
+
+</div>
+<button onclick="color('red')">red</button>
+<button onclick="color('green')">green</button>
+<button onclick="color('yellow')">yellow</button>
+<button onclick="color('orange')">orange</button>
+
+<script>
+    function color(col)
+    {
+    
+        document.getElementById("screen").style.background=col
+    }
+</script>
+
+</body>
+
+</html>
