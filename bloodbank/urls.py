@@ -3,11 +3,10 @@ from django.urls.resolvers import URLPattern
 from . import views
 
 urlpatterns = [
-    path('',views.login,name='login'),
-    path('bld/',views.add_donor,name='bld'),
+    path('',views.user_login,name='user_login'),
+    path('signup/',views.signup,name='signup'),
     path('display/',views.display,name='display'),
-    path('signuup/',views.signuup,name='signuup'),
-    # path('login/',views.login,name='login'),
+    path('add-donor/',views.add_donor,name='add-donor'),
     path('logout/',views.logout,name='logout')
 
 
